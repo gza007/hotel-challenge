@@ -2,8 +2,22 @@ const express = require('express');
 
 const app = express();
 
-app.get('/', (req, res) => {
-  res.status(200).json({ message: 'The Hotel Challenge DB is up and running!' });
+const mongoose = require('mongoose');
+
+const hotelSchema = new mongoose.Schema({
+  email: String,
+  name: String,
+  address1: String,
+  address2: String,
+  city: String,
+  country: String,
+  postCode: String,
+});
+
+const Hotel = mongoose.model('Hotel', hotelSchema);
+
+app.post('/user', (req, res) => {
+  req.status(200).json({ Hotel });
 });
 
 module.exports = app;

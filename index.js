@@ -6,3 +6,5 @@ mongoose.connect(process.env.DATABASE_CONN, { useNewUrlParser: true }, () => {
   console.log('I am working - live from index.js!!!');
   app.listen(3000);
 });
+
+// username, hotel, pword, hotel
